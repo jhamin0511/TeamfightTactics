@@ -71,6 +71,13 @@ dependencies {
     implementation "androidx.fragment:fragment-ktx:$fragment_version"
     debugImplementation "androidx.fragment:fragment-testing:$fragment_version"
 
+    // ========== Dependency Injection ==========
+    def koin_version = "2.1.6"
+    implementation "org.koin:koin-android:$koin_version"
+    implementation "org.koin:koin-android-scope:$koin_version"
+    implementation "org.koin:koin-android-viewmodel:$koin_version"
+    androidTestImplementation "org.koin:koin-test:$koin_version"
+
     // ========== UI ==========
     implementation 'com.google.android.material:material:1.1.0'
 
