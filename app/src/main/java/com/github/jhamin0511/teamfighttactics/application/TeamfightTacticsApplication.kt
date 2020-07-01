@@ -3,6 +3,7 @@ package com.github.jhamin0511.teamfighttactics.application
 import android.app.Application
 import com.github.jhamin0511.teamfighttactics.BuildConfig
 import com.github.jhamin0511.teamfighttactics.di.appModule
+import com.github.jhamin0511.teamfighttactics.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -21,7 +22,8 @@ class TeamfightTacticsApplication : Application() {
 
   private fun initKoin() {
     val modules: List<Module> = listOf(
-      appModule
+      appModule,
+      viewModelModule
     )
 
     startKoin {
