@@ -16,4 +16,9 @@
     <!-- GOLD -->
     <color name="vegas_gold">#C5B358</color>
 
+    <color name="common">#999587</color>
+    <color name="uncommon">#39B65A</color>
+    <color name="rare">#42C3FF</color>
+    <color name="epic">#AC08A5</color>
+    <color name="legendary">#FF8E00</color>
 </resources>
