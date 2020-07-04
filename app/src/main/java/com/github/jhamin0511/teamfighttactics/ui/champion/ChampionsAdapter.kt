@@ -15,6 +15,10 @@ class ChampionsAdapter(
   val viewModel: ChampionsViewModel
 ) : BaseRecyclerAdapter<ChampionDto>() {
 
+  init {
+    viewModel.recyclerQuery = this
+  }
+
   inner class ChampionHolder(
     itemView: View
   ) : BaseViewHolder<ChampionDto>(itemView, viewModel) {

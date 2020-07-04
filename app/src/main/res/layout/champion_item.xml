@@ -20,46 +20,54 @@
             android:id="@+id/image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/rare"
-            android:padding="3dp"
+            android:padding="5dp"
             android:scaleType="centerCrop"
+            app:bindBackgroundColor="@{item.cost.color}"
+            app:bindImage="@{item.champion.imageRes}"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@color/rare"
+            tools:src="@drawable/champion_ahri" />
 
         <ImageView
             android:id="@+id/coin"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:background="@color/rare"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
             android:padding="4dp"
             android:src="@drawable/ic_coin"
+            app:bindBackgroundColor="@{item.cost.color}"
             app:layout_constraintEnd_toStartOf="@id/coin_count"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:background="@color/rare" />
 
         <TextView
             android:id="@+id/coin_count"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:background="@color/rare"
             android:gravity="center"
             android:paddingStart="0dp"
             android:paddingEnd="3dp"
-            android:text="@{String.valueOf(item.cost)}"
+            android:text="@{item.cost.value}"
             android:textColor="@color/white"
-            android:textSize="10sp"
+            android:textSize="12sp"
+            app:bindBackgroundColor="@{item.cost.color}"
             app:layout_constraintBottom_toBottomOf="@id/coin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/coin"
+            tools:background="@color/rare"
             tools:text="3" />
 
         <LinearLayout
             android:id="@+id/trait_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/rare"
             android:orientation="horizontal"
+            android:visibility="gone"
+            app:bindBackgroundColor="@{item.cost.color}"
+            app:bindTraits="@{item.traits}"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            tools:background="@color/rare" />
 
         <TextView
             android:id="@+id/name"
@@ -67,9 +75,10 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="3dp"
             android:layout_marginBottom="3dp"
-            android:text="@{item.name}"
+            android:text="@{item.champion.nameRes}"
             android:textColor="@color/white"
             android:textSize="12sp"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             tools:text="Ahri" />

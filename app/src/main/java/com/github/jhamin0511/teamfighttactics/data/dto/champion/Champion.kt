@@ -5,7 +5,7 @@ import androidx.annotation.StringRes
 import com.github.jhamin0511.teamfighttactics.R
 import com.google.gson.annotations.SerializedName
 
-enum class ChampionName(
+enum class Champion(
   @DrawableRes
   val imageRes: Int,
   @StringRes

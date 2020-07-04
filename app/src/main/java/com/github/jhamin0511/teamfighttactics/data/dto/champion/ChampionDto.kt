@@ -3,12 +3,12 @@ package com.github.jhamin0511.teamfighttactics.data.dto.champion
 import com.google.gson.annotations.SerializedName
 
 data class ChampionDto(
-  @SerializedName("")
-  val name: String,
+  @SerializedName("name")
+  val champion: Champion,
   @SerializedName("championId")
   val id: String,
   @SerializedName("cost")
-  val cost: Int,
+  val cost: Cost,
   @SerializedName("traits")
-  val traits: List<TraitType>
+  val traits: List<Trait>
 )

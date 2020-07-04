@@ -20,7 +20,7 @@ class ChampionsFragment : BaseFragment() {
 
   override fun onValue(savedInstanceState: Bundle?) {
     adapter = ChampionsAdapter(viewModel)
-    viewModel.recyclerQuery = adapter.getQuery()
+    viewModel.loadData()
   }
 
   override fun onView(view: View, savedInstanceState: Bundle?) {
