@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "183552887651",
+    "firebase_url": "https://teamfight-tactics-c38d4.firebaseio.com",
+    "project_id": "teamfight-tactics-c38d4",
+    "storage_bucket": "teamfight-tactics-c38d4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:183552887651:android:f69a61bbbbab7cacb86156",
+        "android_client_info": {
+          "package_name": "com.github.jhamin0511.teamfighttactics"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "183552887651-5hnrg4l9b5fq6k828ghotms4en413291.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.github.jhamin0511.teamfighttactics",
+            "certificate_hash": "ba5ae36b7b30dc1259630a022fe90e1d68803617"
+          }
+        },
+        {
+          "client_id": "183552887651-jg04dcm7fj0jb1atlm1gdrniucqjqbtq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDd6s5GUAybPHihNcD9woNnW-VrpwUMdk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "183552887651-jg04dcm7fj0jb1atlm1gdrniucqjqbtq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
