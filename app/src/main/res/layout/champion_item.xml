@@ -47,7 +47,7 @@
             android:gravity="center"
             android:paddingStart="0dp"
             android:paddingEnd="3dp"
-            android:text="@{item.cost.value}"
+            android:text="@{String.valueOf(item.cost.value)}"
             android:textColor="@color/white"
             android:textSize="12sp"
             app:bindBackgroundColor="@{item.cost.color}"
