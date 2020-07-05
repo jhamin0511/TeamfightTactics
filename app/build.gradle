@@ -36,13 +36,6 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    sourceSets {
-        main {
-            res {
-                srcDirs 'src/main/res', 'src/main/res/drawable/champion', 'src/main/res/drawable/trait'
-            }
-        }
-    }
 }
 
 dependencies {
@@ -79,8 +72,13 @@ dependencies {
     implementation "androidx.fragment:fragment-ktx:$fragment_version"
     debugImplementation "androidx.fragment:fragment-testing:$fragment_version"
 
+    // ========== Firebase ==========
+    // https://firebase.google.com/support/release-notes/android
+    implementation 'com.google.firebase:firebase-analytics-ktx:17.4.3'
+    implementation 'com.google.firebase:firebase-config-ktx:19.1.4'
+
     // ========== Dependency Injection ==========
-    def koin_version = "2.1.6"
+    def koin_version = "2.1.6" // https://github.com/InsertKoinIO/koin/releases
     implementation "org.koin:koin-android:$koin_version"
     implementation "org.koin:koin-android-scope:$koin_version"
     implementation "org.koin:koin-android-viewmodel:$koin_version"
@@ -96,3 +94,5 @@ dependencies {
     // # [Timber][https://github.com/JakeWharton/timber/releases]
     implementation 'com.jakewharton.timber:timber:4.7.1'
 }
+
+apply plugin: 'com.google.gms.google-services'

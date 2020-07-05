@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class ChampionsDto(
   @SerializedName("version")
-  val version: String,
+  val version: String = "",
   @SerializedName("items")
-  val items: List<ChampionDto>
+  val items: List<ChampionDto> = emptyList()
 )
