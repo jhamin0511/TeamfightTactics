@@ -2,6 +2,8 @@ package com.github.jhamin0511.teamfighttactics.ui.champion
 
 import android.app.Application
 import com.github.jhamin0511.teamfighttactics.data.dto.champion.ChampionDto
+import com.github.jhamin0511.teamfighttactics.data.mapper.champion.ChampionMapper
+import com.github.jhamin0511.teamfighttactics.data.vo.champion.ChampionVo
 import com.github.jhamin0511.teamfighttactics.repository.ConfigRepository
 import com.github.jhamin0511.teamfighttactics.ui.base.BaseViewModel
 import com.github.jhamin0511.teamfighttactics.widget.recycler.RecyclerListener
@@ -14,11 +16,14 @@ class ChampionsViewModel(
 ) : BaseViewModel(application), RecyclerListener {
 
   // ========== MODEL ==========
-  lateinit var recyclerQuery: RecyclerQuery<ChampionDto>
+  private val mapper = ChampionMapper()
+  private lateinit var items: List<ChampionDto>
+  lateinit var recyclerQuery: RecyclerQuery<ChampionVo>
 
   fun loadData() {
     val champions = configRepository.getChampions()
-    val item = champions.items.sortedBy { it.cost.value }
+    items = champions.items
+    val item = mapper.toVos(items).sortedBy { it.cost }
 
     recyclerQuery.setItems(item)
   }

@@ -8,8 +8,8 @@
     <data>
 
         <variable
-            name="item"
-            type="com.github.jhamin0511.teamfighttactics.data.dto.champion.ChampionDto" />
+            name="vo"
+            type="com.github.jhamin0511.teamfighttactics.data.vo.champion.ChampionVo" />
     </data>
 
     <com.github.jhamin0511.teamfighttactics.widget.layout.SquareLayout
@@ -22,8 +22,8 @@
             android:layout_height="match_parent"
             android:padding="5dp"
             android:scaleType="centerCrop"
-            app:bindBackgroundColor="@{item.cost.color}"
-            app:bindImage="@{item.champion.imageRes}"
+            app:bindBackgroundColor="@{vo.color}"
+            app:bindImage="@{vo.image}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:background="@color/rare"
@@ -35,7 +35,7 @@
             android:layout_height="18dp"
             android:padding="4dp"
             android:src="@drawable/ic_coin"
-            app:bindBackgroundColor="@{item.cost.color}"
+            app:bindBackgroundColor="@{vo.color}"
             app:layout_constraintEnd_toStartOf="@id/coin_count"
             app:layout_constraintTop_toTopOf="parent"
             tools:background="@color/rare" />
@@ -47,10 +47,10 @@
             android:gravity="center"
             android:paddingStart="0dp"
             android:paddingEnd="3dp"
-            android:text="@{String.valueOf(item.cost.value)}"
+            android:text="@{String.valueOf(vo.cost)}"
             android:textColor="@color/white"
             android:textSize="12sp"
-            app:bindBackgroundColor="@{item.cost.color}"
+            app:bindBackgroundColor="@{vo.color}"
             app:layout_constraintBottom_toBottomOf="@id/coin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/coin"
@@ -63,8 +63,8 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:visibility="gone"
-            app:bindBackgroundColor="@{item.cost.color}"
-            app:bindTraits="@{item.traits}"
+            app:bindBackgroundColor="@{vo.color}"
+            app:bindTraits="@{vo.traits}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:background="@color/rare" />
@@ -75,7 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="3dp"
             android:layout_marginBottom="3dp"
-            android:text="@{item.champion.nameRes}"
+            android:text="@{vo.name}"
             android:textColor="@color/white"
             android:textSize="12sp"
             android:visibility="gone"

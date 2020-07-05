@@ -18,8 +18,4 @@ abstract class BaseRecyclerAdapter<ITEM>
     return items[position]
   }
 
-  fun getQuery(): RecyclerQuery<ITEM> {
-    return this
-  }
-
 }
