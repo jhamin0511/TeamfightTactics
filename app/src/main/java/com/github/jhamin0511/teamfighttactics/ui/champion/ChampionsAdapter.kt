@@ -36,7 +36,7 @@ class ChampionsAdapter(
   }
 
   override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-    val item = getItem(position)
+    val item = items[position]
 
     (holder as ChampionHolder).bindView(item)
   }

@@ -29,12 +29,12 @@ class ChampionsViewModel(
   }
 
   override fun onClick(position: Int) {
-    val item = recyclerQuery.getItem(position)
+    val item = items[position]
     Timber.i("Recycler OnClick ${item}")
   }
 
   override fun onLongClick(position: Int): Boolean {
-    val item = recyclerQuery.getItem(position)
+    val item = items[position]
     Timber.i("Recycler onLongClick ${item}")
 
     return true
