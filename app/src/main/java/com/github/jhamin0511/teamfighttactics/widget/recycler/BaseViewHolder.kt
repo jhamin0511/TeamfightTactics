@@ -2,6 +2,7 @@ package com.github.jhamin0511.teamfighttactics.widget.recycler
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import com.github.jhamin0511.teamfighttactics.widget.listener.setOnSafeClickListener
 
 abstract class BaseViewHolder<ITEM>(
   itemView: View,
@@ -10,7 +11,7 @@ abstract class BaseViewHolder<ITEM>(
 
   init {
     listener?.let {
-      itemView.setOnClickListener { listener.onClick(adapterPosition) }
+      itemView.setOnSafeClickListener { listener.onClick(adapterPosition) }
       itemView.setOnLongClickListener { listener.onLongClick(adapterPosition) }
     }
   }

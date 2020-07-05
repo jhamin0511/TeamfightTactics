@@ -6,14 +6,14 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.github.jhamin0511.teamfighttactics.R
-import com.github.jhamin0511.teamfighttactics.data.dto.champion.ChampionDto
+import com.github.jhamin0511.teamfighttactics.data.vo.champion.ChampionVo
 import com.github.jhamin0511.teamfighttactics.databinding.ChampionItemBinding
 import com.github.jhamin0511.teamfighttactics.widget.recycler.BaseRecyclerAdapter
 import com.github.jhamin0511.teamfighttactics.widget.recycler.BaseViewHolder
 
 class ChampionsAdapter(
   val viewModel: ChampionsViewModel
-) : BaseRecyclerAdapter<ChampionDto>() {
+) : BaseRecyclerAdapter<ChampionVo>() {
 
   init {
     viewModel.recyclerQuery = this
@@ -21,11 +21,11 @@ class ChampionsAdapter(
 
   inner class ChampionHolder(
     itemView: View
-  ) : BaseViewHolder<ChampionDto>(itemView, viewModel) {
+  ) : BaseViewHolder<ChampionVo>(itemView, viewModel) {
     private val binding: ChampionItemBinding = DataBindingUtil.bind(itemView)!!
 
-    override fun bindView(item: ChampionDto) {
-      binding.item = item
+    override fun bindView(item: ChampionVo) {
+      binding.vo = item
     }
   }
 
@@ -36,7 +36,7 @@ class ChampionsAdapter(
   }
 
   override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-    val item = getItem(position)
+    val item = items[position]
 
     (holder as ChampionHolder).bindView(item)
   }

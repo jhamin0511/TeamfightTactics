@@ -9,20 +9,19 @@ import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.constraintlayout.widget.Constraints
 import androidx.databinding.BindingAdapter
-import com.github.jhamin0511.teamfighttactics.data.dto.champion.Trait
 
 object BindingAdapter {
 
   @JvmStatic
   @BindingAdapter("bindTraits")
-  fun bindTraits(layout: LinearLayout, traits: List<Trait>) {
+  fun bindTraits(layout: LinearLayout, traits: List<Int>) {
     traits.forEach {
       val imageView = ImageView(layout.context)
       val size = applyDimension(COMPLEX_UNIT_DIP, 20f, layout.resources.displayMetrics).toInt()
       val layoutParams = Constraints.LayoutParams(size, size)
 
       imageView.layoutParams = layoutParams
-      imageView.setImageResource(it.imageRes)
+      imageView.setImageResource(it)
       layout.addView(imageView)
     }
   }

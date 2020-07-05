@@ -43,18 +43,31 @@ dependencies {
 
     // ========== Kotlin ==========
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.3"
 
     // ========== Test ==========
     testImplementation 'junit:junit:4.12'
     testImplementation "com.google.truth:truth:1.0.1"
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    def test_version = "1.2.0"
+    testImplementation "androidx.test:core:$test_version"
+    testImplementation "androidx.test:rules:$test_version"
+    androidTestImplementation "androidx.test:core:$test_version"
+    androidTestImplementation "androidx.test:rules:$test_version"
+    androidTestImplementation "androidx.test:runner:$test_version"
+    def junit_test_version = "1.1.1"
+    testImplementation "androidx.test.ext:junit:$junit_test_version"
+    androidTestImplementation "androidx.test.ext:junit:$junit_test_version"
+    // # [Robolectric][https://github.com/robolectric/robolectric/releases]
+    testImplementation "org.robolectric:robolectric:4.3.1"
 
     // ========== Androidx ==========
+    // [https://developer.android.com/jetpack/androidx/versions]
     implementation 'androidx.core:core-ktx:1.1.0'
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    // # Lifecycle
+    // # [Lifecycle]
     def lifecycle_version = "2.2.0"
     def arch_version = "2.1.0"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
@@ -63,22 +76,22 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
     testImplementation "androidx.arch.core:core-testing:$arch_version"
-    // # Navigation
+    // # [Navigation]
     def nav_version = "2.2.2"
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
-    // # Fragment
+    // # [Fragment]
     def fragment_version = "1.2.5"
     implementation "androidx.fragment:fragment-ktx:$fragment_version"
     debugImplementation "androidx.fragment:fragment-testing:$fragment_version"
 
     // ========== Firebase ==========
-    // https://firebase.google.com/support/release-notes/android
+    // [https://firebase.google.com/support/release-notes/android]
     implementation 'com.google.firebase:firebase-analytics-ktx:17.4.3'
     implementation 'com.google.firebase:firebase-config-ktx:19.1.4'
 
     // ========== Dependency Injection ==========
-    def koin_version = "2.1.6" // https://github.com/InsertKoinIO/koin/releases
+    def koin_version = "2.1.6" // [Koin][https://github.com/InsertKoinIO/koin/releases]
     implementation "org.koin:koin-android:$koin_version"
     implementation "org.koin:koin-android-scope:$koin_version"
     implementation "org.koin:koin-android-viewmodel:$koin_version"

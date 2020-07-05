@@ -4,6 +4,4 @@ interface RecyclerQuery<T> {
 
   fun setItems(list: List<T>)
 
-  fun getItem(position: Int): T
-
 }
